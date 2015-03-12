@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :restaurants
+
+
   get 'restaurants/index'
 
   get 'restaurants/show'
