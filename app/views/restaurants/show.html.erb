@@ -1,2 +1,37 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1 colspan="2" style="text-align:center;">
+  <u>Restaurant Information</u>
+</h1>
+<br>
+<strong>Name:</strong>
+<%= @restaurant.name %>
+<br>
+<strong>Address:</strong>
+<%= @restaurant.address %>
+<br>
+<strong>City:</strong>
+<%= @restaurant.city %>
+<br>
+<strong>State:</strong>
+<%= @restaurant.state %>
+<br>
+<strong>Zip Code:</strong>
+<%= @restaurant.zip %>
+<br>
+<strong>Phone Number:</strong>
+<%= @restaurant.phone %>
+<br>
+<strong>Website:</strong>
+<%= @restaurant.website %>
+<br>
+<br>
+
+<%= link_to "Edit This Restaurant", edit_restaurant_path(@restaurant), class: "btn btn-warning" %>
+<%= link_to "Remove This Restaurant", restaurant_path(@restaurant), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+<!-- %a.btn.btn-sm.btn-primary{:href => restaurants_path, :role => "button"} List of restaurants »
+-->
+<%= link_to "List of Restaurants »", restaurants_path, class: "btn btn-primary" %>
+<!-- %a.btn.btn-sm.btn-primary{:href => root_path, :role => "button"} Return to Home »
+-->
+<%= link_to "Return to Home »", root_path, class: "btn btn-primary" %>
+<br>
+<br>

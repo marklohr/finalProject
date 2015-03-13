@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require angular/angular
+//= require angular-route/angular-route
+//= require underscore/underscore
+

@@ -1,0 +1,26 @@
+<%= form_for @restaurant do |f| %>
+  <strong><%= f.label :name %></strong>
+  <%= f.text_field :name %>
+  <br><br>
+  <strong><%= f.label :address %></strong>
+  <%= f.text_field :address %>
+  <br><br>
+  <strong><%= f.label :city %></strong>
+  <%= f.text_field :city %>
+  <br><br>
+    <strong><%= f.label :state %></strong>
+  <%= f.text_field :state %>
+  <br><br>
+  <strong><%= f.label :zip %></strong>
+  <%= f.text_field :zip %>
+  <br><br>
+  <strong><%= f.label :phone %></strong>
+  <%= f.text_field :phone %>
+  <br><br>
+  <strong><%= f.label :website %></strong>
+  <%= f.text_field :website %>
+  <br><br>
+  <%= f.submit %><br><br>
+<% end %>
+
+<a class="btn btn-primary btn-lg" href="<%= restaurants_path %>" role="button">Return To Restaurants Page »</a>

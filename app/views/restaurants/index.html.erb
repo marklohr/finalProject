@@ -1,7 +1,42 @@
-<h1>Import Restaurants</h1>
+<h1 colspan="2" style="text-align:center;">
+  <u>Restaurants</u>
+</h1>
+<p id="notice">
+  <%= notice %>
+</p>
+<br>
 
-<%= form_tag import_restaurants_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<%= end %>
-
+<div class="col-md-5">
+  <a class="btn btn-primary btn-lg btn-block" href="<%= root_path %>" role="button">Home Page »</a>
+  <br>
+  <% @restaurants.each do |restaurant| %>
+    <strong>Name:</strong>
+    <%= restaurant.name %>
+    <br>
+    <strong>Address:</strong>
+    <%= restaurant.address %>
+    <br>
+    <strong>City:</strong>
+    <%= restaurant.city %>
+    <br>
+    <strong>State:</strong>
+    <%= restaurant.state %>
+    <br>
+    <strong>Zip Code:</strong>
+    <%= restaurant.zip %>
+    <br>
+    <strong>Phone Number:</strong>
+    <%= restaurant.phone %>
+    <br>
+    <strong>Website:</strong>
+    <%= restaurant.website %>
+    <br>
+    <br>
+      <a class="btn btn-sm btn-info" href="<%= restaurant_path(restaurant) %>" role="button">More Information</a>
+      <a class="btn btn-sm btn-warning" href="<%= edit_restaurant_path(restaurant) %>" role="button">Edit Information</a>
+      <br>
+      <br>
+    <br>
+  <% end %>
+  <a class="btn btn-primary btn-lg btn-block" href="<%= new_restaurant_path %>" role="button">Enter New Restaurant »</a>
+</div>
