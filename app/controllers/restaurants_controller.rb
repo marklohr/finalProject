@@ -5,6 +5,13 @@ class RestaurantsController < ApplicationController
   def show
   end
 
+  def import
+
+    Product.import (params[:file])
+    redirect_to root_url, notice: "Products imported."
+
+  end
+
   def new
   end
 
