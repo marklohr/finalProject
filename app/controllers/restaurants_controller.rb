@@ -70,7 +70,8 @@ end
       :zip,
       :phone,
       :website,
-      :geocode
+      :latitude,
+      :longitude
       )
 
 
