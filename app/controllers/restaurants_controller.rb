@@ -45,6 +45,7 @@ end
     end
   end
 
+
   def destroy
     @restaurant = Restaurant.find params[:id]
     @restaurant.destroy
@@ -52,7 +53,6 @@ end
       format.json { render nothing: true }
     end
   end
-
 
 
   private
