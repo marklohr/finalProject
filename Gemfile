@@ -11,6 +11,7 @@ gem 'angular_rails_csrf'
 #allows upload of files
 gem "paperclip", "~> 4.2"
 gem 'faker' 
+gem 'rack-cors'
 #remove unneeded assets
 gem 'quiet_assets'
 #add post gres for heroku deployment
