@@ -5,13 +5,17 @@ source 'https://rubygems.org'
 gem 'aws-sdk', '< 2.0'
 #gem 'devise'
 gem 'cancancan', '~> 1.10'
-gem 'angular_rails_csrf'
 #gem "omniauth-google-oauth2"
 #https://github.com/zquestz/omniauth-google-oauth2
+gem 'angular_rails_csrf'
 #allows upload of files
 gem "paperclip", "~> 4.2"
+# adds fake data to database
 gem 'faker' 
+# Middleware that will make Rack-based apps CORS compatible. 
 gem 'rack-cors'
+# adds geocoding (by street or IP), reverse geocoding, and distance queries.
+gem 'geocoder'
 #remove unneeded assets
 gem 'quiet_assets'
 #add post gres for heroku deployment
