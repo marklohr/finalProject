@@ -2,8 +2,11 @@ class RestaurantsController < ApplicationController
   
   def index
     @restaurants = Restaurant.all
+    respond_to do |format|
+      format.json { render json: @restaurants.to_json }
+    end
   end
-
+  
   def show
     set_restaurant
   end
@@ -13,15 +16,17 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.create restaurant_params
+    @restaurant = Restaurant.new restaurant_params
     if @restaurant.save
-      flash[:notice] = 'Restaurant data was saved successfully.'
-      redirect_to restaurants_path
-    else
-      flash[:error] = 'Restaurant data was NOT saved successfully.'
-      render :new
+      respond_to do |format|
+        format.json { render json: @restaurant.to_json }
+    end
+  else
+    respond_to do |format|
+      format.json { render json: @restaurant.errors.full_messages, status: 422 }
     end
   end
+end
 
   def edit
     @restaurant = Restaurant.find params[:id]
@@ -29,21 +34,30 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find params[:id]
-    @restaurant.update_attributes restaurant_params
-    redirect_to restaurants_path
+    if @restaurant.update_attributes restaurant_params
+      respond_to do |format|
+        format.json { render json: @restaurant.to_json }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: @restaurant.errors.full_messages, status: 422 }
+      end
+    end
   end
 
   def destroy
     @restaurant = Restaurant.find params[:id]
-    @restaurant.delete
-    redirect_to restaurants_path
+    @restaurant.destroy
+    respond_to do |format|
+      format.json { render nothing: true }
+    end
   end
 
 
 
   private
 
-    def set_restaurant
+  def set_restaurant
     @restaurant = Restaurant.find params[:id]
   end
   
@@ -55,7 +69,8 @@ class RestaurantsController < ApplicationController
       :state,
       :zip,
       :phone,
-      :website
+      :website,
+      :geocode
       )
 
 
