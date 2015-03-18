@@ -1,19 +1,21 @@
 require 'csv'
 
-desc "Import CSV Data."
+# desc "Import CSV Data."
 task :import_csv_data => :environment do
 
-  csv_file_path = File.read("#{Rails.root}/lib/tasks/3dmap_csv.csv")
+  csv_file_path = File.read("#{Rails.root}/db/3dmap.csv")
   csv = CSV.parse(csv_file_path, :headers => true)
   csv.each do |row|
     Restaurant.create!(
-        :name => row[0],
-        :address => row[1],
-        :city => row[2],
-        :state => row[3],
-        :zip => row[4],
-        :phone => row[5],
-        :website => row[6]
+        :name => row[0].try(:encode, "utf-8"),
+        :address => row[1].try(:encode, "utf-8"),
+        :city => row[2].try(:encode, "utf-8"),
+        :state => row[3].try(:encode, "utf-8"),
+        :zip => row[4].try(:encode, "utf-8"),
+        :phone => row[5].try(:encode, "utf-8"),
+        :website => row[6].try(:encode, "utf-8"),
+        :latitude => row[7].try(:encode, "utf-8"),
+        :longitude => row[8].try(:encode, "utf-8")
     )
   end
 
