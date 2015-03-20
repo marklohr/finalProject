@@ -8,6 +8,8 @@ gem 'cancancan', '~> 1.10'
 #gem "omniauth-google-oauth2"
 #https://github.com/zquestz/omniauth-google-oauth2
 gem 'angular_rails_csrf'
+#admin authentication
+gem 'devise'
 #allows upload of files
 gem "paperclip", "~> 4.2"
 # adds fake data to database
