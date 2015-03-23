@@ -9,6 +9,9 @@ class RestaurantsController < ApplicationController
   
   def show
     set_restaurant
+    respond_to do |format|
+      format.json { render json: @restaurant.to_json }
+    end
   end
 
   def new
@@ -20,13 +23,13 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       respond_to do |format|
         format.json { render json: @restaurant.to_json }
-    end
+      end
   else
     respond_to do |format|
       format.json { render json: @restaurant.errors.full_messages, status: 422 }
+      end
     end
   end
-end
 
   def edit
     @restaurant = Restaurant.find params[:id]
