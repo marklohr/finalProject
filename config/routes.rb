@@ -2,21 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :restaurants
-
-
-  get 'restaurants/index'
-
-  get 'restaurants/show'
-
-  get 'restaurants/new'
-
-  get 'restaurants/create'
-
-  get 'restaurants/edit'
-
-  get 'restaurants/update'
-
-  get 'restaurants/destroy'
+  
 
   root 'welcome#index'
 

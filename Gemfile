@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 gem 'aws-sdk', '< 2.0'
 #gem 'devise'
 gem 'cancancan', '~> 1.10'
-#gem "omniauth-google-oauth2"
-#https://github.com/zquestz/omniauth-google-oauth2
+gem 'activeadmin'
+gem 'meta_search'
 gem 'angular_rails_csrf'
 #allows upload of files
 gem "paperclip", "~> 4.2"

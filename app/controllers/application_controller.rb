@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 #   protect_from_forgery with: :exception
 
-  before_filter :set_default_response_format
+  # before_filter :set_default_response_format
 
 private
-  def set_default_response_format
-    request.format = :json
-  end  
+  # def set_default_response_format
+  #   request.format = :html
+  # end  
 
 end
