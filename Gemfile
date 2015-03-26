@@ -14,6 +14,8 @@ gem "paperclip", "~> 4.2"
 gem 'faker' 
 # Middleware that will make Rack-based apps CORS compatible. 
 gem 'rack-cors'
+# admin/user authentication
+gem 'devise'
 # adds geocoding (by street or IP), reverse geocoding, and distance queries.
 gem 'geocoder'
 #remove unneeded assets
